@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date_of_recepeit: 2022-11-23
+  article: MyString
+  amount: 1
+  date_of_payment: 2022-11-23
+  registation_info: one
+
+two:
+  date_of_recepeit: 2022-11-23
+  article: MyString
+  amount: 1
+  date_of_payment: 2022-11-23
+  registation_info: two

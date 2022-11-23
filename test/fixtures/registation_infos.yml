@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  state_number: MyString
+  date_of_registation: 2022-11-23
+  car_holder_info: one
+
+two:
+  state_number: MyString
+  date_of_registation: 2022-11-23
+  car_holder_info: two

@@ -1,0 +1,12 @@
+<h1>Wanter list<h1>
+
+<ul>
+    <% @all_wanted.each do |wanted| %>
+        <li><%= wanted.state_number %></li>
+        <li><%= wanted.description %></li>
+        <li><%= wanted.car_info.VIN %></li>
+        <li><%= wanted.car_info.brand %></li>
+        <li><%= wanted.car_info.model %></li>
+    <% end %>
+    --------------------------
+</ul>

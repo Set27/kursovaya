@@ -1,0 +1,21 @@
+<h1>Розыск<h1>
+<table>
+    <tr>
+        <th>Розыскной номер</th>
+        <th>Гос. номер машины</th>
+        <th>Брэнд</th>
+        <th>Модель</th>
+        <th>Описание машины</th>
+        <th>VIN номер</th>
+    </tr>
+    <tr>
+     <% @all_wanted.each do |wanted| %>
+        <td><%= link_to wanted.id, wanted_list_path(wanted.id) %></td>
+        <td><%= wanted.registation_info.state_number %></td>
+        <td><%= wanted.car_info.brand %></td>
+        <td><%= wanted.car_info.model %></td>
+        <td><%= wanted.description %></td>
+        <td><%= wanted.car_info.VIN %></td>
+    <tr>
+    <% end %>
+</table>

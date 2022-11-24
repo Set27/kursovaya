@@ -1,0 +1,16 @@
+<h1>Добавление в БД Розыск</h1>
+
+<%= form_with model: @one_wanted do |f| %>
+    <div>
+        <%= f.label :description, "Описание" %><br>
+        <%= f.text_field :description %>
+    </div>
+    <div>
+        <%= f.label "Выбор номера" %>
+        <%= f.select :car_info_id, RegistationInfo.pluck(:state_number, :id) %>
+    </div>
+    <div>
+        <%= f.submit value = "Save" %>
+    </div>
+<% end %>
+

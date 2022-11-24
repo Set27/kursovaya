@@ -4,5 +4,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  root "wanted_list#index"
+  root "wanted_lists#index"
+
+  get '/rozysk', to: 'wanted_lists#index'
+
+  resources :wanted_lists
 end

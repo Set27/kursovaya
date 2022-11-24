@@ -1,5 +1,5 @@
 class WantedList < ApplicationRecord
-  belongs_to :cat_info
+  belongs_to :car_info
   validates :state_number, presence: true, format: {
     with: /[0-9]{4}[A-Z]{2}-[1-7]/, message: 'not valid state number'
   }

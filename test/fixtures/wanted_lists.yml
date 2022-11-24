@@ -3,9 +3,9 @@
 one:
   state_number: MyString
   description: MyText
-  cat_info: one
+  car_info: one
 
 two:
   state_number: MyString
   description: MyText
-  cat_info: two
+  car_info: two

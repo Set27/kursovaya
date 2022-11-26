@@ -5,9 +5,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  root "wanted_lists#index"
-
-  get '/rozysk', to: 'wanted_lists#index'
+  root to: redirect("/wanted_lists")
 
   resources :wanted_lists
   resources :car_infos, expect: :show

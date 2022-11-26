@@ -20,8 +20,8 @@
           <th>Изменить</th>
           <th>Удалить</th>
       </tr>
-      <tr class="table-light">
-       <% @all_wanted.each do |wanted| %>
+      <% @all_wanted.each do |wanted| %>
+        <tr class="table-light">
           <td><%= wanted.id %></td>
           <td><%= wanted.registation_info.state_number %></td>
           <td><%= wanted.car_info.brand %></td>
@@ -37,7 +37,7 @@
             </button> %>
           </td>
           <td class="table-borderless"><button class = "btn btn-danger">Удалить</button></td>
-      </tr>
+        </tr>
       <% end %>
     </table>
   </div>

@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col">
+    <div class="row">
+      <div class="col">
+        <h1> Пользователи </h1>
+      </div>
+    </div>
+
+    <table class="table table-border">
+      <tr class = "table-primary">
+          <th>Email</th>
+          <th>Роль</th>
+          <th></th>
+      </tr>
+      <% @users.each do |user| %>
+        <tr class="table-light">
+          <td><%= user.email %></td>
+          <td>Пользователь</td>
+          <td>
+            <%= link_to "Поменять роль", '#', class: "btn btn-sm btn-primary" %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

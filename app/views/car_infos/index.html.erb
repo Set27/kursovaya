@@ -22,8 +22,12 @@
           <td><%= car.brand %></td>
           <td><%= car.model %></td>
           <td>
-            <%= link_to "Редактировать", edit_car_info_path(car), class: "btn btn-sm btn-primary" %>
-            <%= link_to "Удалить", car_info_path(car), method: :delete, class: "btn btn-sm btn-danger" %>
+            <% if allowed_to?(:edit?, car) %>
+              <%= link_to "Редактировать", edit_car_info_path(car), class: "btn btn-sm btn-primary" %>
+            <% end %>
+            <% if allowed_to?(:destroy?, car) %>
+              <%= link_to "Удалить", car_info_path(car), method: :delete, class: "btn btn-sm btn-danger" %>
+            <% end %>
           </td>
         </tr>
       <% end %>

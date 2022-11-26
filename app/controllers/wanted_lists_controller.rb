@@ -1,4 +1,7 @@
 class WantedListsController < ApplicationController
+    skip_before_action :authenticate_user!, only: %i(index show)
+    before_action :authorize_wanted_list
+
     def index
         @all_wanted = WantedList.all
     end
@@ -33,7 +36,13 @@ class WantedListsController < ApplicationController
     end
 
     private
+
+
         def wanted_list_params
             params.require(:wanted_list).permit(:id)
+        end
+
+        def authorize_wanted_list
+            authorize!(@one_wanted || WantedList.new)
         end
 end

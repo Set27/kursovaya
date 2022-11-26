@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :find_user, only: %i(edit update)
+  before_action :authorize_user
 
   def index
     @users = User.all
@@ -17,6 +18,10 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def authorize_user
+    authorize!(@user || User.new)
+  end
 
   def find_user
     @user = User.find(params[:id])

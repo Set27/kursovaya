@@ -6,9 +6,11 @@
         <li class="nav-item">
           <%= navbar_link_item(title: "Главная") %>
         </li>
-        <li class="nav-item">
-          <%= navbar_link_item(title: "Пользователи", path: users_path) %>
-        </li>
+        <% if allowed_to?(:index?, User.new) %>
+          <li class="nav-item">
+            <%= navbar_link_item(title: "Пользователи", path: users_path) %>
+          </li>
+        <% end %>
         <li class="nav-item">
           <%= navbar_link_item(title: "Информация об авто", path: car_infos_path) %>
         </li>

@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@rails/ujs": "^7.0.4",
     "@rails/webpacker": "^6.0.0-rc.6",
     "jquery": "^3.6.1",
     "jquery-ujs": "^1.2.3",

@@ -1,34 +1,44 @@
-<div class="container-fluid rozysk">
-  <button class="btn btn-primary buttons  "><%=link_to "Добавить", new_wanted_list_path  %></button>
-<table class="table table-border">
-    <tr class = "table-primary">
-        <th>Розыскной номер</th>
-        <th>Гос. номер машины</th>
-        <th>Брэнд</th>
-        <th>Модель</th>
-        <th>Описание машины</th>
-        <th>VIN номер</th>
-        <th>Изменить</th>
-        <th>Удалить</th>
-    </tr>
-    <tr class="table-light">
-     <% @all_wanted.each do |wanted| %>
-        <td><%= wanted.id %></td>
-        <td><%= wanted.registation_info.state_number %></td>
-        <td><%= wanted.car_info.brand %></td>
-        <td><%= wanted.car_info.model %></td>
-        <td><%= wanted.description %></td>
-        <td><%= wanted.car_info.VIN %></td>
-        <td class="table-borderless">
-          <%# <button class = "btn btn-secondary">
-           <%= link_to "Изменить", wanted_list_url(@one_wanted), data: {
-            turbo_method: :delete,
-            turrbo_confirm: "Are you sure?" }
-            %>
-          </button> %>
-        </td>
-        <td class="table-borderless"><button class = "btn btn-danger">Удалить</button></td>
-    </tr>
-    <% end %>
-</table>
+<div class="row">
+  <div class="col">
+    <div class="row">
+      <div class="col">
+        <h1> Розыск </h1>
+      </div>
+      <div class="col">
+        <%= link_to "Добавить", new_wanted_list_path, class: "btn btn-lg btn-primary float-end" %>
+      </div>
+    </div>
+
+    <table class="table table-border">
+      <tr class = "table-primary">
+          <th>Розыскной номер</th>
+          <th>Гос. номер машины</th>
+          <th>Брэнд</th>
+          <th>Модель</th>
+          <th>Описание машины</th>
+          <th>VIN номер</th>
+          <th>Изменить</th>
+          <th>Удалить</th>
+      </tr>
+      <tr class="table-light">
+       <% @all_wanted.each do |wanted| %>
+          <td><%= wanted.id %></td>
+          <td><%= wanted.registation_info.state_number %></td>
+          <td><%= wanted.car_info.brand %></td>
+          <td><%= wanted.car_info.model %></td>
+          <td><%= wanted.description %></td>
+          <td><%= wanted.car_info.VIN %></td>
+          <td class="table-borderless">
+            <%# <button class = "btn btn-secondary">
+             <%= link_to "Изменить", wanted_list_url(@one_wanted), data: {
+              turbo_method: :delete,
+              turrbo_confirm: "Are you sure?" }
+              %>
+            </button> %>
+          </td>
+          <td class="table-borderless"><button class = "btn btn-danger">Удалить</button></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
 </div>

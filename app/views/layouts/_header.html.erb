@@ -1,16 +1,35 @@
-<header class = "navbar navbar-expand-lg bg-light">
-    <div class = "container-fluid ">
-        <nav>
-            <ul class ="nav navbar-nav">
-                <li class ="nav-link"><%= link_to "Главная", '#' %> </li>
-                <li class ="nav-link"><%= link_to "Информация об авто", '#' %> </li>
-                <li class ="nav-link"><%= link_to "Владельцы авто", '#' %> </li>
-                <li class ="nav-link"><%= link_to "Регистрация авто", '#' %> </li>
-                <li class ="nav-link"><%= link_to "Штрафы авто", '#' %> </li>
-                <li class ="nav-link"><%= link_to "Жалобы авто", '#' %> </li>
-                <li class ="nav-link"><%= link_to "Розыск", wanted_lists_path %> </li>
-                <li class ="nav-link voity"><%= link_to "Войти", '#' %> </li>
-            </ul>
-        </nav>
+<nav class = "navbar navbar-expand-lg navbar-dark bg-primary mb-2">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">ГАИ</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= navbar_link_item(title: "Главная") %>
+        </li>
+        <li class="nav-item">
+          <%= navbar_link_item(title: "Информация об авто") %>
+        </li>
+        <li class="nav-item">
+          <%= navbar_link_item(title: "Владельцы авто") %>
+        </li>
+        <li class="nav-item">
+          <%= navbar_link_item(title: "Регистрация авто") %>
+        </li>
+        <li class="nav-item">
+          <%= navbar_link_item(title: "Штрафы авто") %>
+        </li>
+        <li class="nav-item">
+          <%= navbar_link_item(title: "Жалобы авто") %>
+        </li>
+        <li class="nav-item">
+          <%= navbar_link_item(title: "Розыск", path: wanted_lists_path) %>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <%= link_to "Войти", '#', class: "nav-link"%>
+        </li>
+      </ul>
     </div>
-</header>
+  </div>
+</nav>

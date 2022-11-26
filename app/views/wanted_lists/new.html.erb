@@ -1,17 +1,37 @@
-<h1>Добавление в БД Розыск</h1>
+<h1>Добавление в БД "Розыск"</h1>
 
+<div class = "container-fluid">
 <%= form_with model: @one_wanted do |f| %>
-    <div>
-        <%= f.label :description, "Описание" %><br>
-        <%= f.text_field :description %>
+    <div class="mb-3">
+        <form>
+            <label for="Описание" class="form label">@one_wanted.label :description</label>
+            <%= f.label :description, "Описание" %><br>
+            <%= f.text_field :description %>
+        </form>
     </div>
-    <div>
+    <div class="mb-3">
         <%= f.label "Выбор номера" %>
         <%= f.select :car_info_id, RegistationInfo.pluck(:state_number, :id) %>
     </div>
-    <div>
+    <div class="mb-3">
         <%= f.submit value = "Save" %>
 
     </div>
 <% end %>
+
+<form>
+    <div class="col-4">
+        <label for="exampleInputEmail1" class="form-label">Описание</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name ="wanted_list[description]" id="wanted_list_description">
+    </div>
+    <div class="col-auto">
+        <label for="wanted_list_Выбор номера">Выбор номера</label>
+    </div>
+    <div class="col-2">
+        <select name="wanted_list[car_info_id]" id="wanted_list_car_info_id" class = "form-select">
+           <option> <%= RegistationInfo.pluck(:state_number, :id) %> </option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary" name="commit" data-disable-with="Save">Submit</button>
+</form>
 

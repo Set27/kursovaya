@@ -14,4 +14,38 @@
  *= require_self
  */
 
- @import "bootstrap"
+ @import "bootstrap";
+
+ .li{
+    font-size: larger !important;
+ }
+
+ .table{
+    width: 1440px;
+ }
+
+ .body{
+    font-size: small !important;
+ }
+
+  .voity{
+    margin-left: 600px;
+  }
+
+  .table{
+    text-align: center;
+    margin-left: 30px;
+  }
+
+  .buttons{
+    margin-left: 30px;
+    .a{
+        color: black !important;
+        text-decoration: none !important;
+    }
+  }
+
+  .btn-primary{
+    color: black !important;
+}
+  

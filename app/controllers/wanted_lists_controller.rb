@@ -25,8 +25,15 @@ class WantedListsController < ApplicationController
         @one_wanted = WantedList.find(params[:id])
     end
 
+    def destroy
+        @one_wanted = WantedList.find(params[:id])
+        @one_wanted = WantedList.destroy
+        
+        redirect_to root_path, status: :see_other
+    end
+
     private
         def wanted_list_params
-            params.require(:wanted_list).permit(:description)
+            params.require(:wanted_list).permit(:id)
         end
 end

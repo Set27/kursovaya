@@ -77,3 +77,6 @@ end
 
 gem 'simple_form'
 gem 'webpacker', github: 'rails/webpacker'
+
+gem 'devise'
+gem 'devise-bootstrap-views', '~> 1.0'

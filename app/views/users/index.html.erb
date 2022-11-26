@@ -15,9 +15,9 @@
       <% @users.each do |user| %>
         <tr class="table-light">
           <td><%= user.email %></td>
-          <td>Пользователь</td>
+          <td><%= user.role_text %></td>
           <td>
-            <%= link_to "Поменять роль", '#', class: "btn btn-sm btn-primary" %>
+            <%= link_to "Поменять роль", edit_user_path(user), class: "btn btn-sm btn-primary" %>
           </td>
         </tr>
       <% end %>

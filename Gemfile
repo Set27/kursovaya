@@ -80,3 +80,4 @@ gem 'webpacker', github: 'rails/webpacker'
 
 gem 'devise'
 gem 'devise-bootstrap-views', '~> 1.0'
+gem 'enumerize'

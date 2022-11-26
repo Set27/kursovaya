@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   get '/rozysk', to: 'wanted_lists#index'
 
   resources :wanted_lists
+  resources :car_infos, expect: :show
 end

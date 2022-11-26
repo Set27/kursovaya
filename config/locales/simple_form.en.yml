@@ -16,9 +16,15 @@ en:
         description: Описание
         car_info: Информация о машине
         registation_info: Информация о регистрации
+      car_info:
+        brand: Марка
+        model: Модель
 
   helpers:
     submit:
       wanted_list:
         create: Добавить в розыск
         update: Обновнить информацию о розыске
+      car_info:
+        create: Добавить авто
+        update: Обновнить авто

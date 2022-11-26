@@ -19,6 +19,8 @@ en:
       car_info:
         brand: Марка
         model: Модель
+      user:
+        role: Роль
 
   helpers:
     submit:
@@ -28,3 +30,5 @@ en:
       car_info:
         create: Добавить авто
         update: Обновнить авто
+      user:
+        update: Обновить

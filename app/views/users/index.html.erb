@@ -17,7 +17,9 @@
           <td><%= user.email %></td>
           <td><%= user.role_text %></td>
           <td>
-            <%= link_to "Поменять роль", edit_user_path(user), class: "btn btn-sm btn-primary" %>
+            <% if allowed_to?(:edit?, user) %>
+              <%= link_to "Поменять роль", edit_user_path(user), class: "btn btn-sm btn-primary" %>
+            <% end %>
           </td>
         </tr>
       <% end %>

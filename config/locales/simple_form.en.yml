@@ -9,7 +9,7 @@ en:
       # When using html, text and mark won't be used.
       # html: '<abbr title="required">*</abbr>'
     error_notification:
-      default_message: "Please review the problems below:"
+      default_message: "Обратите внимание на следующие проблемы:"
 
     labels:
       wanted_list:
@@ -21,6 +21,16 @@ en:
         model: Модель
       user:
         role: Роль
+      car_holder_info:
+        full_name: ФИО
+        date_of_birth: Дата рождения
+        data_of_car_license: Дата получения прав
+      registation_info:
+        state_number: Государственный номер
+        car_holder_info: Владелец
+        car_info: Машина
+        date_of_registation: Дата регистрации
+        
 
   helpers:
     submit:

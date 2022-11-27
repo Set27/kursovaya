@@ -5,10 +5,10 @@
         <h1> Розыск </h1>
       </div>
       <% if allowed_to?(:new?, @all_wanted) %>
-      <div class="col">
-        <%= link_to "Добавить" , new_wanted_list_path, class: "btn btn-lg btn-primary float-end" %>
-      </div>
-      <% end %>
+        <div class="col">
+          <%= link_to "Добавить" , new_wanted_list_path, class: "btn btn-lg btn-primary float-end" %>
+        </div>
+        <% end %>
     </div>
 
     <table class="table table-border">
@@ -19,12 +19,7 @@
         <th>Модель</th>
         <th>Описание машины</th>
         <th>VIN номер</th>
-        <% if allowed_to?(:edit?, @all_wanted) %>
-          <th>Изменить</th>
-          <%end%>
-            <% if allowed_to?(:destroy?, @all_wanted) %>
-              <th>Удалить</th>
-              <% end %>
+        <th></th>
       </tr>
       <% @all_wanted.each do |wanted| %>
         <tr class="table-light">
@@ -49,13 +44,11 @@
           <% if allowed_to?(:edit?, wanted) %>
             <td>
               <%= link_to "Редактировать" , edit_wanted_list_path(wanted), class: "btn btn-sm btn-primary" %>
+                <% end %>
+                  <% if allowed_to?(:destroy?, wanted) %>
+                    <%= link_to "Удалить" , wanted_list_path(wanted), method: :delete, class: "btn btn-sm btn-danger" %>
             </td>
             <% end %>
-              <% if allowed_to?(:destroy?, wanted) %>
-                <td>
-                  <%= link_to "Удалить" , wanted_list_path(wanted), method: :delete, class: "btn btn-sm btn-danger" %>
-                </td>
-                <% end %>
         </tr>
         <% end %>
     </table>

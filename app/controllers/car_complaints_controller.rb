@@ -1,0 +1,2 @@
+class CarComplaintsController < ApplicationController
+end

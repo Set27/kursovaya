@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :wanted_lists
   resources :car_infos, expect: :show
   resources :car_holder_infos
+  resources :registation_infos
 
   resources :users, only: %i(index edit update)
 end

@@ -1,0 +1,9 @@
+<%= simple_form_for @registation do |f| %>
+  <%= f.input :state_number %>
+  <%= f.association :car_holder_info %>        
+  <%= f.association :car_info %>
+  <%= f.input :date_of_registation, as: :date, start_year: Date.today.year - 90,
+                                   end_year: Date.today.year %>
+  <%= f.button :submit %>
+<% end %>
+

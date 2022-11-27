@@ -4,9 +4,11 @@
       <div class="col">
         <h1> Информация об авто </h1>
       </div>
-      <div class="col">
-        <%= link_to "Добавить", new_car_info_path, class: "btn btn-lg btn-primary float-end" %>
-      </div>
+      <% if allowed_to?(:new?, @cars) %>
+        <div class="col">
+          <%= link_to "Добавить" , new_car_info_path, class: "btn btn-lg btn-primary float-end" %>
+        </div>
+      <% end %>
     </div>
 
     <table class="table table-border">

@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="col">
+      <div class="row">
+        <div class="col">
+          <h1> Жалобы на авто </h1>
+        </div>
+        <% if allowed_to?(:new?, @complaints) %>
+        <div class="col">
+          <%= link_to "Добавить" , new_car_complaint_path, class: "btn btn-lg btn-primary float-end" %>
+        </div>
+        <% end %>
+      </div>
+  
+      <table class="table table-border">
+        <tr class = "table-primary">
+            <th>Адрес</th>
+            <th>Описание</th>
+            <th>Дата</th>
+            <th></th>
+        </tr>
+        <% @complaints.each do |c| %>
+          <tr class="table-light">
+            <td><%= c.address %></td>
+            <td><%= c.description %></td>
+            <td><%= c.amount %></td>
+            <td>
+                <% if allowed_to?(:edit?, c) %>
+                  <%= link_to "Редактировать", edit_car_complaint_path(c), class: "btn btn-sm btn-primary" %>
+                <% end %>
+                <% if allowed_to?(:destroy?, c) %>
+                  <%= link_to "Удалить", car_complaints_path(c), method: :delete, class: "btn btn-sm btn-danger" %>
+                <% end %>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+  

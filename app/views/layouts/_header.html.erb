@@ -3,9 +3,6 @@
     <a class="navbar-brand" href="#">ГАИ</a>
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <%= navbar_link_item(title: "Главная") %>
-        </li>
         <% if allowed_to?(:index?, User.new) %>
           <li class="nav-item">
             <%= navbar_link_item(title: "Пользователи", path: users_path) %>
@@ -23,10 +20,10 @@
           <%= navbar_link_item(title: "Регистрация авто", path: registation_infos_path) %>
         </li>
         <li class="nav-item">
-          <%= navbar_link_item(title: "Штрафы авто") %>
+          <%= navbar_link_item(title: "Штрафы авто", path: fines_path) %>
         </li>
         <li class="nav-item">
-          <%= navbar_link_item(title: "Жалобы авто") %>
+          <%= navbar_link_item(title: "Жалобы авто", path: car_complaints_path) %>
         </li>
         <% if allowed_to?(:index?, WantedList.new) %>
           <li class="nav-item">

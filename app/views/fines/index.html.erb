@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col">
+      <div class="row">
+        <div class="col">
+          <h1> Штрафы </h1>
+        </div>
+        <% if allowed_to?(:new?, @fines) %>
+        <div class="col">
+          <%= link_to "Добавить" , new_fine_path, class: "btn btn-lg btn-primary float-end" %>
+        </div>
+        <% end %>
+      </div>
+  
+      <table class="table table-border">
+        <tr class = "table-primary">
+            <th>Дата получения штрафа</th>
+            <th>Статья</th>
+            <th>Сумма штрафа</th>
+            <th>Дата оплаты</th>
+            <th></th>
+        </tr>
+        <% @fines.each do |f| %>
+          <tr class="table-light">
+            <td><%= f.date_of_recepeit %></td>
+            <td><%= f.article %></td>
+            <td><%= f.amount %>BYN</td>
+            <td><%= f.date_of_payment %></td>
+            <td>
+                <% if allowed_to?(:edit?, f) %>
+                  <%= link_to "Редактировать", edit_fine_path(f), class: "btn btn-sm btn-primary" %>
+                <% end %>
+                <% if allowed_to?(:destroy?, f) %>
+                  <%= link_to "Удалить", f_info_path(f), method: :delete, class: "btn btn-sm btn-danger" %>
+                <% end %>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+  

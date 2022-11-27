@@ -4,9 +4,11 @@
         <div class="col">
           <h1> Регистрации </h1>
         </div>
+        <% if allowed_to?(:new?, @registations) %>
         <div class="col">
-          <%= link_to "Добавить", new_registation_info_path, class: "btn btn-lg btn-primary float-end" %>
+          <%= link_to "Добавить" , new_registation_info_path, class: "btn btn-lg btn-primary float-end" %>
         </div>
+        <% end %>
       </div>
   
       <table class="table table-border">

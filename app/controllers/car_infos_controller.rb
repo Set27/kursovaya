@@ -39,6 +39,17 @@ class CarInfosController < ApplicationController
     redirect_to action: :index
   end
 
+  def registation_infos
+    registation_infos = @car.registation_infos.map do |registation_info|
+      {
+        id: registation_info.id,
+        state_number: registation_info.state_number
+      }
+    end
+
+    render json: registation_infos, status: :ok
+  end
+
   private
 
   def authorize_car

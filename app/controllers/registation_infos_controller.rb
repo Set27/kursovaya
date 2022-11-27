@@ -50,7 +50,8 @@ class RegistationInfosController < ApplicationController
   end
 
   def registation_params
-    params.require(:registation_info).permit(:state_number, :date_of_registation)
+    params.require(:registation_info)
+      .permit(:state_number, :date_of_registation, :car_holder_info_id, :car_info_id)
   end
 
 end

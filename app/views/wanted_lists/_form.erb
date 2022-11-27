@@ -4,3 +4,38 @@
   <%= f.input :description %>
   <%= f.button :submit %>
 <% end %>
+
+<script type="text/javascript">
+  const initializeRegistrationSelector = (value) => {
+    const stateSelect = document.getElementById("wanted_list_registation_info_id");
+
+    const options = ['<option value="" label=" "></option>']
+
+    stateSelect.innerHTML = options.join()
+
+    if (!!value) {
+      const url='/car_infos/' + value + '/registation_infos';
+
+      fetch(url).then(data => data.json())
+        .then(result => {
+          result.map(item => {
+            options.push('<option value="' + item.id + '" label="' + item.state_number + '"></option>')
+          })
+
+          stateSelect.innerHTML = options.join()
+        })
+    }
+  }
+
+  const createForm = () => {
+    const carSelect = document.getElementById("wanted_list_car_info_id")
+
+    carSelect.addEventListener("change", (event) => {
+      initializeRegistrationSelector(carSelect.value)
+    })
+
+    initializeRegistrationSelector(carSelect.value)
+  }
+
+  createForm();
+</script>

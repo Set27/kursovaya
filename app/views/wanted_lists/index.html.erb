@@ -4,41 +4,60 @@
       <div class="col">
         <h1> Розыск </h1>
       </div>
+      <% if allowed_to?(:new?, @all_wanted) %>
       <div class="col">
-        <%= link_to "Добавить", new_wanted_list_path, class: "btn btn-lg btn-primary float-end" %>
+        <%= link_to "Добавить" , new_wanted_list_path, class: "btn btn-lg btn-primary float-end" %>
       </div>
+      <% end %>
     </div>
 
     <table class="table table-border">
-      <tr class = "table-primary">
-          <th>Розыскной номер</th>
-          <th>Гос. номер машины</th>
-          <th>Брэнд</th>
-          <th>Модель</th>
-          <th>Описание машины</th>
-          <th>VIN номер</th>
+      <tr class="table-primary">
+        <th>Розыскной номер</th>
+        <th>Гос. номер машины</th>
+        <th>Брэнд</th>
+        <th>Модель</th>
+        <th>Описание машины</th>
+        <th>VIN номер</th>
+        <% if allowed_to?(:edit?, @all_wanted) %>
           <th>Изменить</th>
-          <th>Удалить</th>
+          <%end%>
+            <% if allowed_to?(:destroy?, @all_wanted) %>
+              <th>Удалить</th>
+              <% end %>
       </tr>
       <% @all_wanted.each do |wanted| %>
         <tr class="table-light">
-          <td><%= wanted.id %></td>
-          <td><%= wanted.registation_info.state_number %></td>
-          <td><%= wanted.car_info.brand %></td>
-          <td><%= wanted.car_info.model %></td>
-          <td><%= wanted.description %></td>
-          <td><%= wanted.car_info.VIN %></td>
-          <td class="table-borderless">
-            <%# <button class = "btn btn-secondary">
-             <%= link_to "Изменить", wanted_list_url(@one_wanted), data: {
-              turbo_method: :delete,
-              turrbo_confirm: "Are you sure?" }
-              %>
-            </button> %>
+          <td>
+            <%= wanted.id %>
           </td>
-          <td class="table-borderless"><button class = "btn btn-danger">Удалить</button></td>
+          <td>
+            <%= wanted.registation_info.state_number %>
+          </td>
+          <td>
+            <%= wanted.car_info.brand %>
+          </td>
+          <td>
+            <%= wanted.car_info.model %>
+          </td>
+          <td>
+            <%= wanted.description %>
+          </td>
+          <td>
+            <%= wanted.car_info.VIN %>
+          </td>
+          <% if allowed_to?(:edit?, wanted) %>
+            <td>
+              <%= link_to "Редактировать" , edit_wanted_list_path(wanted), class: "btn btn-sm btn-primary" %>
+            </td>
+            <% end %>
+              <% if allowed_to?(:destroy?, wanted) %>
+                <td>
+                  <%= link_to "Удалить" , wanted_list_path(wanted), method: :delete, class: "btn btn-sm btn-danger" %>
+                </td>
+                <% end %>
         </tr>
-      <% end %>
+        <% end %>
     </table>
   </div>
 </div>

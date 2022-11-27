@@ -24,7 +24,7 @@ class CarHolderInfosController < ApplicationController
       end
     
       def update
-        @holder.assign_attributes(holder)
+        @holder.assign_attributes(holder_params)
     
         if @holder.valid?
           @holder.save

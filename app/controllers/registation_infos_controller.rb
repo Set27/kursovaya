@@ -11,7 +11,7 @@ class RegistationInfosController < ApplicationController
       end
     
       def create
-        @registation = RegistationInfo.new(holder_params)
+        @registation = RegistationInfo.new(registation_params)
         if @registation.valid?
           @registation.save
           redirect_to action: :index
@@ -24,7 +24,7 @@ class RegistationInfosController < ApplicationController
       end
     
       def update
-        @registation.assign_attributes(registation)
+        @registation.assign_attributes(registation_params)
     
         if @registation.valid?
           @registation.save
@@ -41,17 +41,16 @@ class RegistationInfosController < ApplicationController
 
   private
 
-  def authorize_holder
+  def authorize_registation
     authorize!(@registation || RegistationInfo.new)
   end
 
-  def find_holder
+  def find_registation
     @registation = RegistationInfo.find(params[:id])
   end
 
   def registation_params
-    params.require(:registation_info).permit(::state_number, :date_of_registation)
+    params.require(:registation_info).permit(:state_number, :date_of_registation)
   end
-end
 
 end

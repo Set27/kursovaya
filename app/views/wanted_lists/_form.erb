@@ -1,6 +1,6 @@
 <%= simple_form_for @one_wanted do |f| %>
   <%= f.association :car_info, label_method: :VIN, value_method: :id %>
-  <%= f.association :registation_info %>
+  <%= f.association :registation_info, label_method: :state_number, value_method: :id %>
   <%= f.input :description %>
   <%= f.button :submit %>
 <% end %>

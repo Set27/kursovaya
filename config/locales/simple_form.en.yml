@@ -30,7 +30,15 @@ en:
         car_holder_info: Владелец
         car_info: Машина
         date_of_registation: Дата регистрации
-        
+      fine:
+        date_of_recepeit: Дата получения штрафа
+        article: Статья
+        amount: Сумма
+        date_of_payment: Дата оплаты
+      car_complaint:
+        address: Адрес
+        description: Описание
+        date: Дата жалобы
 
   helpers:
     submit:

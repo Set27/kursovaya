@@ -50,7 +50,7 @@ class CarComplaintsController < ApplicationController
   end
 
   def complaint_params
-    params.require(:car_complaint).permit(:address,:description,:date)
+    params.require(:car_complaint).permit(:address,:description,:date,:registation_info_id)
   end
 
 end

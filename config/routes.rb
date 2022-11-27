@@ -16,7 +16,12 @@ Rails.application.routes.draw do
 
   resources :car_holder_infos
   resources :registation_infos
-  resources :fines
+  resources :fines do
+    member do
+      get :payment_form
+      post :payment
+    end
+  end
   resources :car_complaints
 
   resources :users, only: %i(index edit update)

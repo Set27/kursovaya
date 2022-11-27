@@ -50,7 +50,7 @@ class FinesController < ApplicationController
   end
 
   def fine_params
-    params.require(:fine).permit(:date_of_recepeit,:article,:amount)
+    params.require(:fine).permit(:date_of_recepeit,:article,:amount,:registation_info_id)
   end
 
 end

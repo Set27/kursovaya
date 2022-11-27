@@ -19,7 +19,9 @@
         <th>Модель</th>
         <th>Описание машины</th>
         <th>VIN номер</th>
+        <% if allowed_to?(:new?, @all_wanted) %>
         <th></th>
+        <% end %>
       </tr>
       <% @all_wanted.each do |wanted| %>
         <tr class="table-light">

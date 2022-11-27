@@ -16,19 +16,21 @@
             <th>Адрес</th>
             <th>Описание</th>
             <th>Дата</th>
+            <% if allowed_to?(:new?, @complaints) %>
             <th></th>
+            <% end %>
         </tr>
         <% @complaints.each do |c| %>
           <tr class="table-light">
             <td><%= c.address %></td>
             <td><%= c.description %></td>
-            <td><%= c.amount %></td>
+            <td><%= c.date %></td>
             <td>
                 <% if allowed_to?(:edit?, c) %>
                   <%= link_to "Редактировать", edit_car_complaint_path(c), class: "btn btn-sm btn-primary" %>
                 <% end %>
                 <% if allowed_to?(:destroy?, c) %>
-                  <%= link_to "Удалить", car_complaints_path(c), method: :delete, class: "btn btn-sm btn-danger" %>
+                  <%= link_to "Удалить", car_complaint_path(c), method: :delete, class: "btn btn-sm btn-danger" %>
                 <% end %>
           </tr>
         <% end %>

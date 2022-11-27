@@ -3,7 +3,7 @@
   <%= f.input :article %>
   <%= f.input :amount %>
   <%= f.input :date_of_payment %>
-  <%= f.association :registation_info %>        
+  <%= f.association :registation_info, label_method: :state_number, value_method: :id  %>        
   <%= f.button :submit %>
 <% end %>
 

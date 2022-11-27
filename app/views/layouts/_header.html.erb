@@ -13,18 +13,26 @@
             <%= navbar_link_item(title: "Информация об авто", path: car_infos_path) %>
           </li>
         <% end %>
+        <% if allowed_to?(:index?, CarHolderInfo.new) %>
         <li class="nav-item">
           <%= navbar_link_item(title: "Владельцы авто", path: car_holder_infos_path) %>
         </li>
+        <% end %>
+        <% if allowed_to?(:index?, RegistationInfo.new) %>
         <li class="nav-item">
           <%= navbar_link_item(title: "Регистрация авто", path: registation_infos_path) %>
         </li>
+        <% end %>
+        <% if allowed_to?(:index?, Fine.new) %>
         <li class="nav-item">
           <%= navbar_link_item(title: "Штрафы авто", path: fines_path) %>
         </li>
+        <% end %>
+        <% if allowed_to?(:index?, CarComplaint.new) %>
         <li class="nav-item">
           <%= navbar_link_item(title: "Жалобы авто", path: car_complaints_path) %>
         </li>
+        <% end %>
         <% if allowed_to?(:index?, WantedList.new) %>
           <li class="nav-item">
             <%= navbar_link_item(title: "Розыск", path: wanted_lists_path) %>

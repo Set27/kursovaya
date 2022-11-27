@@ -23,14 +23,14 @@
           <tr class="table-light">
             <td><%= f.date_of_recepeit %></td>
             <td><%= f.article %></td>
-            <td><%= f.amount %>BYN</td>
+            <td><%= f.amount %> BYN</td>
             <td><%= f.date_of_payment %></td>
             <td>
                 <% if allowed_to?(:edit?, f) %>
                   <%= link_to "Редактировать", edit_fine_path(f), class: "btn btn-sm btn-primary" %>
                 <% end %>
                 <% if allowed_to?(:destroy?, f) %>
-                  <%= link_to "Удалить", f_info_path(f), method: :delete, class: "btn btn-sm btn-danger" %>
+                  <%= link_to "Удалить", fine_path(f), method: :delete, class: "btn btn-sm btn-danger" %>
                 <% end %>
           </tr>
         <% end %>

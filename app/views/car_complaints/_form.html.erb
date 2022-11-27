@@ -2,7 +2,7 @@
   <%= f.input :address %>
   <%= f.input :description %>
   <%= f.input :date %>
-  <%= f.association :registation_info %>        
+  <%= f.association :registation_info, label_method: :state_number, value_method: :id %>        
   <%= f.button :submit %>
 <% end %>
 

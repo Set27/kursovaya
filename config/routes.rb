@@ -8,7 +8,12 @@ Rails.application.routes.draw do
   root to: redirect("/wanted_lists")
 
   resources :wanted_lists
-  resources :car_infos, expect: :show
+  resources :car_infos, except: :show do
+    member do
+      get :registation_infos
+    end
+  end
+
   resources :car_holder_infos
   resources :registation_infos
   resources :fines

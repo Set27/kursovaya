@@ -23,8 +23,6 @@ class WantedListPolicy < ApplicationPolicy
     user&.admin?
   end
 
-  private
-
   def manage?
     user&.admin? || user&.manager?
   end

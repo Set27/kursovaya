@@ -22,4 +22,8 @@ class CarInfoPolicy < ApplicationPolicy
   def destroy?
     user&.admin?
   end
+
+  def registation_infos?
+    create?
+  end
 end

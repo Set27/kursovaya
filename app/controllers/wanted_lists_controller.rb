@@ -39,7 +39,7 @@ class WantedListsController < ApplicationController
 
 
         def wanted_list_params
-            params.require(:wanted_list).permit(:id)
+            params.require(:wanted_list).permit(:description, :car_info_id, :registation_info_id)
         end
 
         def authorize_wanted_list

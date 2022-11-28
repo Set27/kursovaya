@@ -24,7 +24,7 @@ en:
       car_holder_info:
         full_name: ФИО
         date_of_birth: Дата рождения
-        data_of_car_license: Дата получения прав
+        date_of_car_license: Дата получения прав
       registation_info:
         state_number: Государственный номер
         car_holder_info: Владелец

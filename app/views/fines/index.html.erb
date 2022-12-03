@@ -17,6 +17,7 @@
             <th>Статья</th>
             <th>Сумма штрафа</th>
             <th>Дата оплаты</th>
+            <th>Государственный номер</th>
             <th></th>
         </tr>
         <% @fines.each do |f| %>
@@ -25,6 +26,7 @@
             <td><%= f.article %></td>
             <td><%= f.amount %> BYN</td>
             <td><%= f.date_of_payment %></td>
+            <td><%= f.registation_info.state_number %></td>
             <td>
                 <% if allowed_to?(:edit?, f) %>
                   <%= link_to "Редактировать", edit_fine_path(f), class: "btn btn-sm btn-primary" %>

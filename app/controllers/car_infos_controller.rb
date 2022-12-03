@@ -1,5 +1,4 @@
 class CarInfosController < ApplicationController
-  before_action :find_car, except: [:index, :new, :create]
   before_action :authorize_car
 
   def index
